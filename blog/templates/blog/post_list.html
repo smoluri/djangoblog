@@ -5,6 +5,30 @@
         <title>Blog dla programistów</title>
     </head>
 <body>
-<h1>Witam na stronie bloga!</h1>
+    <div>
+        <h1>Witam na stronie bloga!</h1>
+        <h2>Blog o programowaniu</h2>
+        <h3>Autor: Strefa Kursów</h3>
+        <h4>Wszelkie prawa zastrzeżone</h4>
+    </div>
+
+    {% comment "Komentarz autora" %}
+    Tutaj lista postów
+    {% endcomment %}
+
+    {% for post in posts %}
+
+    <div>
+        <p>opublikowany: {{ post.publish_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <em>{{ post.text|linebreaksbr }}</em>
+    </div>
+    {% endfor %}
+    <div>
+    <ul>
+
+    </ul>
+    </div>
 </body>
+
 </html>
