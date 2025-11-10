@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="pl">
     <head>
         <meta charset="UTF-8">
         <title>Blog dla programistów</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
     </head>
 <body>
-    <div>
-        <h1>Witam na stronie bloga!</h1>
+    <div class="page-header">
+        <h1>Witam na stronie bloga dla programistów</h1>
         <h2>Blog o programowaniu</h2>
-        <h3>Autor: Strefa Kursów</h3>
-        <h4>Wszelkie prawa zastrzeżone</h4>
     </div>
 
     {% comment "Komentarz autora" %}
@@ -18,16 +18,14 @@
 
     {% for post in posts %}
 
-    <div>
+    <div class="post">
         <p>opublikowany: {{ post.publish_date }}</p>
         <h2><a href="">{{ post.title }}</a></h2>
         <em>{{ post.text|linebreaksbr }}</em>
     </div>
     {% endfor %}
-    <div>
-    <ul>
+    <div class="stopka">
 
-    </ul>
     </div>
 </body>
 
